@@ -3,6 +3,21 @@ entries:
   vacations-api:
   - apiVersion: v2
     appVersion: 0.1.4.1
+    created: "2021-12-22T20:59:46.576118514Z"
+    description: A Helm chart for Kubernetes providing vacations api deployment.
+    digest: 2397b70831e5ed36306b9b9107136f2a2893bfec5dca604be6df25d1719995ee
+    icon: https://avatars.githubusercontent.com/u/75327652?s=200&v=4
+    maintainers:
+    - email: developer@iperka.com
+      name: iperka
+      url: https://iperka.com
+    name: vacations-api
+    type: application
+    urls:
+    - https://github.com/iperka/helm-charts/releases/download/vacations-api-0.1.6/vacations-api-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 0.1.4.1
     created: "2021-12-22T20:14:11.709276987Z"
     description: A Helm chart for Kubernetes providing vacations api deployment.
     digest: 0ae4d3cb54afa0130a25d2f6225e6500594733b08678f1d59c3b68644be340b8
