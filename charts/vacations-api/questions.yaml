@@ -6,47 +6,82 @@ questions:
       - development
       - production
     label: Profile
-    description: Defines the profile the API will be using. See Docs for further details.
     required: true
+    group: General
+    how_subquestion_if: production
+    subquestions:
+      - variable: datasourceUrl
+        default: jdbc:h2:mem:vacations-development
+        type: string
+        label: Connection URL
+        required: true
+        group: Datasource
+      - variable: datasourceDriverClassName
+        default: org.h2.Driver
+        type: string
+        label: Driver Class
+        required: true
+        group: Datasource
+      - variable: datasourceUsername
+        default: sa
+        type: string
+        label: Username
+        required: true
+        group: Datasource
+      - variable: datasourcePassword
+        type: string
+        label: Password
+        required: false
+        group: Datasource
   - variable: auth0Audience
     default: https://api.iperka.com/vacations/
     type: string
     label: Auth0 Audience
     required: true
+    group: Auth0
   - variable: auth0Domain
     default: https://iperka.eu.auth0.com/
     type: string
     label: Auth0 Domain
     required: true
+    group: Auth0
   - variable: apiDocsEnabled
     default: "true"
     type: boolean
     label: Enable OpenAPI endpoint
-    description: If enabled the OpenAPI definitions will be available without authentication.
     required: true
     show_subquestion_if: true
+    group: Docs
     subquestions:
       - variable: apiDocsShowActuator
         default: "false"
         type: boolean
         label: Enable OpenAPI actuator endpoint
-        description: If enabled the OpenAPI definitions for actuator endpoints will be available without authentication.
         required: true
+        group: Docs
+      - variable: apiServerUrl
+        default: https://api.vacations.iperka.com/v1/
+        type: string
+        label: API Server URL
+        required: true
+        group: Docs
       - variable: swaggerUiEnabled
         default: "false"
         type: boolean
         label: Enable Swagger UI
-        description: If enabled the Swager UI endpoint will be available without authentication.
         required: true
         show_subquestion_if: true
+        group: Docs
         subquestions:
           - variable: swaggerUiApiDocsPath
             default: ../openapi/v3
             type: string
             label: Relative path for Swagger UI to get OpenAPI definitions.
             required: true
+            group: Docs
           - variable: swaggerUiOAuth2RedirectUrl
             default: /oauth2-redirect.html
             type: string
             label: Relative path for Swagger UI to get OAuth2 redirect.
             required: true
+            group: Docs
