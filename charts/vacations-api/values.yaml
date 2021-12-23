@@ -54,3 +54,6 @@ contextPath: /
 
 # replicas defines the amount of replicas created by cluster.
 replicas: 4
+
+# apiServerUrl defines the main production server endpoint url.
+apiServerUrl: https://api.vacations.iperka.com/v1/

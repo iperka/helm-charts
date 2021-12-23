@@ -1,0 +1,52 @@
+questions:
+  - variable: profile
+    default: development
+    type: enum
+    options:
+      - development
+      - production
+    label: Profile
+    description: Defines the profile the API will be using. See Docs for further details.
+    required: true
+  - variable: auth0Audience
+    default: https://api.iperka.com/vacations/
+    type: string
+    label: Auth0 Audience
+    required: true
+  - variable: auth0Domain
+    default: https://iperka.eu.auth0.com/
+    type: string
+    label: Auth0 Domain
+    required: true
+  - variable: apiDocsEnabled
+    default: "true"
+    type: boolean
+    label: Enable OpenAPI endpoint
+    description: If enabled the OpenAPI definitions will be available without authentication.
+    required: true
+    show_subquestion_if: true
+    subquestions:
+      - variable: apiDocsShowActuator
+        default: "false"
+        type: boolean
+        label: Enable OpenAPI actuator endpoint
+        description: If enabled the OpenAPI definitions for actuator endpoints will be available without authentication.
+        required: true
+      - variable: swaggerUiEnabled
+        default: "false"
+        type: boolean
+        label: Enable Swagger UI
+        description: If enabled the Swager UI endpoint will be available without authentication.
+        required: true
+        show_subquestion_if: true
+        subquestions:
+          - variable: swaggerUiApiDocsPath
+            default: ../openapi/v3
+            type: string
+            label: Relative path for Swagger UI to get OpenAPI definitions.
+            required: true
+          - variable: swaggerUiOAuth2RedirectUrl
+            default: /oauth2-redirect.html
+            type: string
+            label: Relative path for Swagger UI to get OAuth2 redirect.
+            required: true

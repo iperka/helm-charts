@@ -56,6 +56,8 @@ spec:
               value:  {{ .Values.swaggerUiOAuth2RedirectUrl | default "/oauth2-redirect.html" | quote }}
             - name: SERVER_SERVLET_CONTEXT_PATH
               value: {{ .Values.contextPath | default "/" | quote }}
+            - name: API_SERVER_URL
+              value: {{ .Values.apiServerUrl | default "https://api.vacations.iperka.com/v1/" | quote }}
           image: ghcr.io/iperka/vacations-api:latest
           imagePullPolicy: Always
           livenessProbe:
