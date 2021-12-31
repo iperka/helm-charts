@@ -32,6 +32,10 @@ spec:
               value: {{ .Values.auth0Audience | default "https://api.iperka.com/vacations/" | quote }}
             - name: AUTH0_DOMAIN
               value: {{ .Values.auth0Domain | default "https://iperka.eu.auth0.com/" | quote }}
+            - name: AUTH0_CLIENT_ID
+              value: {{ .Values.auth0ClientId | default "MY_CLIENT_ID" | quote }}
+            - name: AUTH0_CLIENT_SECRET
+              value: {{ .Values.auth0ClientSecret | default "MY_CLIENT_SECRET" | quote }}
             - name: DATASOURCE_URL
               value: {{ .Values.datasourceUrl | default "jdbc:h2:mem:vacations-development" | quote }}
             - name: DATASOURCE_DRIVER
@@ -58,6 +62,22 @@ spec:
               value: {{ .Values.contextPath | default "/" | quote }}
             - name: API_SERVER_URL
               value: {{ .Values.apiServerUrl | default "https://api.vacations.iperka.com/v1/" | quote }}
+            - name: MAIL_HOST
+              value: {{ .Values.mailHost | default "localhost" | quote }}
+            - name: MAIL_PORT
+              value: {{ .Values.mailPort | default 25 }}
+            - name: MAIL_USERNAME
+              value: {{ .Values.mailUsername | default "myUser" | quote }}
+            - name: MAIL_PASSWORD
+              value: {{ .Values.mailPassword | default "myPassword" | quote }}
+            - name: MAIL_SMTP_AUTH
+              value: {{ .Values.mailSmtpAuth | default true | quote }}
+            - name: MAIL_SMTP_STARTTLS_ENABLED
+              value: {{ .Values.mailSmtpStarttlsEnalbed | default true | quote }}
+            - name: MAIL_FROM_ADDRESS
+              value: {{ .Values.mailFromAddress | default "no-reply@iperka.com" | quote }}
+            - name: MAIL_FROM_NAME
+              value: {{ .Values.mailFromName | default "iperka" | quote }}
           image: ghcr.io/iperka/vacations-api:latest
           imagePullPolicy: Always
           livenessProbe:

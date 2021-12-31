@@ -10,11 +10,17 @@ managementServerPort: 8081
 # maxPageSize sets the maximum allowed page size for responses.
 maxPageSize: 100
 
-# auth0Audience sets the Auth0 audience.
+# auth0Audience sets the Auth0 audience. (Must end with /.)
 auth0Audience: https://api.iperka.com/vacations/
 
-# auth0Domain sets the Auth0 domain.
+# auth0Domain sets the Auth0 domain. (Must end with /.)
 auth0Domain: https://iperka.eu.auth0.com/
+
+# auth0ClientId sets the Auth0 Client ID for Management API.
+auth0ClientId: MY_CLIENT_ID
+
+# auth0ClientSecret sets theAuth0 Client Secret for Management API.
+auth0ClientSecret: MY_CLIENT_SECRET
 
 # datasourceUrl defines the datasource url.
 datasourceUrl: jdbc:h2:mem:vacations-development
@@ -57,3 +63,27 @@ replicas: 4
 
 # apiServerUrl defines the main production server endpoint url.
 apiServerUrl: https://api.vacations.iperka.com/v1/
+
+# mailHost defines the mail server host.
+mailHost: localhost
+
+# mailPort defines the mail server port.
+mailPort: 25
+
+# mailUsername defines the mail server username.
+mailUsername: myUser
+
+# mailPassword defines the mail server password.
+mailPassword: myPassword
+
+# mailSmtpAuth defines if the mail server requires smtp authentication.
+mailSmtpAuth: true
+
+# mailSmtpStarttlsEnalbed defines if the mail server requires smtp starttls authentication.
+mailSmtpStarttlsEnalbed: true
+
+# mailFromAddress defines the mail from address.
+mailFromAddress: no-reply@iperka.com
+
+# mailFromName defines the mail from name.
+mailFromName: iperka

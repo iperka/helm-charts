@@ -36,13 +36,24 @@ questions:
   - variable: auth0Audience
     default: https://api.iperka.com/vacations/
     type: string
-    label: Auth0 Audience
+    label: Auth0 Audience (Must end with /.)
     required: true
     group: Auth0
   - variable: auth0Domain
     default: https://iperka.eu.auth0.com/
     type: string
-    label: Auth0 Domain
+    label: Auth0 Domain (Must end with /.)
+    required: true
+    group: Auth0
+  - variable: auth0ClientId
+    default: MY_CLIENT_ID
+    type: string
+    label: Auth0 Client ID
+    required: true
+    group: Auth0
+  - variable: auth0ClientSecret
+    type: password
+    label: Auth0 Client Secret
     required: true
     group: Auth0
   - variable: apiDocsEnabled
@@ -85,3 +96,47 @@ questions:
             label: Relative path for Swagger UI to get OAuth2 redirect.
             required: true
             group: Docs
+  - variable: mailHost
+    default: localhost
+    type: string
+    label: Mail Server Host
+    required: true
+    group: Mail
+  - variable: mailPort
+    default: 25
+    type: number
+    label: Mail Server Port
+    required: true
+    group: Mail
+  - variable: mailUsername
+    type: string
+    label: Mail Server Username
+    required: true
+    group: Mail
+  - variable: mailPassword
+    type: password
+    label: Mail Server Password
+    required: true
+    group: Mail
+  - variable: mailSmtpAuth
+    type: boolean
+    label: Mail Server use SMTP Authentication
+    required: true
+    group: Mail
+  - variable: mailSmtpStarttlsEnalbed
+    type: boolean
+    label: Mail Server use SMTP STARTTLS Authentication
+    required: true
+    group: Mail
+  - variable: mailFromAddress
+    default: no-reply@iperka.com
+    type: string
+    label: Send Mails from Email
+    required: true
+    group: Mail
+  - variable: mailFromName
+    default: iperka
+    type: string
+    label: Send Mails from Name
+    required: true
+    group: Mail
