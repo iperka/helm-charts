@@ -36,18 +36,10 @@ spec:
               value: {{ .Values.auth0ClientId | default "MY_CLIENT_ID" | quote }}
             - name: AUTH0_CLIENT_SECRET
               value: {{ .Values.auth0ClientSecret | default "MY_CLIENT_SECRET" | quote }}
-            - name: DATASOURCE_URL
-              value: {{ .Values.datasourceUrl | default "jdbc:h2:mem:vacations-development" | quote }}
-            - name: DATASOURCE_DRIVER
-              value: {{ .Values.datasourceDriverClassName | default "org.h2.Driver" | quote }}
-            - name: DATASOURCE_USERNAME
-              value: {{ .Values.datasourceUsername | default "sa" | quote }}
-            - name: DATASOURCE_PASSWORD
-              value: {{ .Values.datasourcePassword | default "" | quote }}
-            - name: JPA_DDL_AUTO
-              value: {{ .Values.jpaDllAuto | default "validate" | quote }}
-            - name: JPA_HIBERNATE_DIALECT
-              value: {{ .Values.jpaHibernateDialect | default "" | quote }}
+            - name: MONGODB_URI
+              value: {{ .Values.mongodbUrl | default "mongodb://localhost:27017/" | quote }}
+            - name: MONGODB_DATABASE
+              value: {{ .Values.mongodbDatabase | default "vacations-api-production" | quote }}
             - name: API_DOCS_ENABLED
               value: {{ .Values.apiDocsEnabled| default true | quote }}
             - name: API_DOCS_SHOW_ACTUATOR

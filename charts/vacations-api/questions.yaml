@@ -10,28 +10,17 @@ questions:
     group: General
     how_subquestion_if: production
     subquestions:
-      - variable: datasourceUrl
-        default: jdbc:h2:mem:vacations-development
+      - variable: mongodbUrl
+        default: mongodb://localhost:27017/
         type: string
         label: Connection URL
         required: true
         group: Datasource
-      - variable: datasourceDriverClassName
-        default: org.h2.Driver
+      - variable: mongodbDatabase
+        default: vacations-api-production
         type: string
-        label: Driver Class
+        label: Database
         required: true
-        group: Datasource
-      - variable: datasourceUsername
-        default: sa
-        type: string
-        label: Username
-        required: true
-        group: Datasource
-      - variable: datasourcePassword
-        type: string
-        label: Password
-        required: false
         group: Datasource
   - variable: auth0Audience
     default: https://api.iperka.com/vacations/
