@@ -17,6 +17,21 @@ entries:
     - https://github.com/iperka/helm-charts/releases/download/vacations-api-1.1.2-mongodb/vacations-api-1.1.2-mongodb.tgz
     version: 1.1.2-mongodb
   - apiVersion: v2
+    appVersion: 1.0.13
+    created: "2022-06-02T19:39:32.842982669Z"
+    description: A Helm chart for Kubernetes providing vacations api deployment.
+    digest: 1d8a3204988602748f72b39ba0ccff8d7c6f6bec366f67e154d0a9d5ca9aadad
+    icon: https://avatars.githubusercontent.com/u/75327652?s=200&v=4
+    maintainers:
+    - email: developer@iperka.com
+      name: iperka
+      url: https://iperka.com
+    name: vacations-api
+    type: application
+    urls:
+    - https://github.com/iperka/helm-charts/releases/download/vacations-api-1.0.13/vacations-api-1.0.13.tgz
+    version: 1.0.13
+  - apiVersion: v2
     appVersion: 0.2.7
     created: "2021-12-31T10:00:54.517809317Z"
     description: A Helm chart for Kubernetes providing vacations api deployment.
